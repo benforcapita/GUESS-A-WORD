@@ -1,0 +1,27 @@
+.GamePage{
+    margin: auto;
+    width: 50%;
+    border: 5px solid green;
+    padding: 10px;
+    margin-top: 10%;
+}
+
+#input{
+    outline-width: 0;
+    border: none;
+    padding: 5px 20px;
+    margin: 0 10px;
+    border-radius: 999px;
+    background-color: #eff2f5;
+    width: 30%;
+}
+#checkBtn{
+    border-radius: 999px;
+    background-color: #eff2f5;
+    padding: 5px 20px;
+    cursor: pointer;
+}
+
+.gameElements{
+  text-align: center;
+}

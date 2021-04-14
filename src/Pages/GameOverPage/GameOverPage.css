@@ -1,0 +1,35 @@
+.GameOverPage{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin: auto;
+    width: 50%;
+    border: 3px solid black;
+    padding: 10px;
+    margin-top: 5%;
+    
+}
+
+form>h1{
+    color: red;
+    box-shadow: 2px 2px 5px 8px #413f3f;
+}
+
+form>button{
+    
+    
+    color: white;
+    background-color: black; /* Green */
+    border: none;
+    /* color: black; */
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 8px #413f3f;
+
+    border-radius: 40%;
+}
