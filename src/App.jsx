@@ -208,7 +208,8 @@ export default function App() {
           </div>
           <div className="round-info">
             <span className="category">
-              <span aria-hidden="true">↗</span> {view.category}
+              <Arrow className="diagonal-arrow category-arrow" />{' '}
+              {view.category}
             </span>
             <span className="letter-count">{view.word.length} letters</span>
           </div>
@@ -261,7 +262,11 @@ export default function App() {
           {finished ? (
             <div className="result-panel">
               <div className="result-symbol" aria-hidden="true">
-                {view.status === 'won' ? '✳' : '↗'}
+                {view.status === 'won' ? (
+                  '✳'
+                ) : (
+                  <Arrow className="diagonal-arrow" />
+                )}
               </div>
               <h3 ref={resultHeading} tabIndex="-1">
                 {view.status === 'won'
@@ -359,7 +364,7 @@ export default function App() {
         onClose={() => setRestartOpen(false)}
       >
         <span className="dialog-symbol" aria-hidden="true">
-          ↗
+          <Arrow className="diagonal-arrow" />
         </span>
         <h2 id="restart-title">Ready for a new word?</h2>
         <p id="restart-description">

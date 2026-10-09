@@ -156,7 +156,7 @@ test('accessible play, help and confirmation dialog have no serious automated vi
   page,
 }) => {
   await seed(page);
-  await page.getByText('How to play', { exact: true }).click();
+  await page.locator('summary').click();
   await expect(
     page.getByText('Every correct guess reveals all matching letters.'),
   ).toBeVisible();
@@ -191,4 +191,26 @@ test('narrow screens and long words fit without horizontal scrolling or page err
     page.getByRole('heading', { name: 'Nicely done!' }),
   ).toBeVisible();
   expect(errors).toEqual([]);
+});
+
+test('capture the playable layout at each supported viewport', async ({
+  page,
+}, testInfo) => {
+  await seed(page);
+  await page.keyboard.press('a');
+  await expect(
+    page.getByRole('group', { name: 'Word: blank A blank A blank A' }),
+  ).toBeVisible();
+  await page.screenshot({
+    path: testInfo.outputPath('playing.png'),
+    fullPage: true,
+  });
+  await page.keyboard.type('bn');
+  await expect(
+    page.getByRole('heading', { name: 'Nicely done!' }),
+  ).toBeVisible();
+  await page.screenshot({
+    path: testInfo.outputPath('won.png'),
+    fullPage: true,
+  });
 });
